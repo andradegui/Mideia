@@ -152,7 +152,7 @@ function cadastrar() {
      msgError.innerHTML = ''; 
 
      setTimeout(() => {
-      window.location.href = '/Views/login.html';
+      window.location.href = 'Views/login.html';
      }, 2000);
      
   }
