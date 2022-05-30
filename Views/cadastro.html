@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="../assets/logo.svg" />
+    <link rel="stylesheet" href="../css/cadastro.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <title>Cadastro | Mideia</title>
+</head>
+
+<body>
+    <main>        
+        <div class="container">
+            <div class="card">
+
+                <div id="msgError"></div>
+                <div id="msgSuccess"></div>
+
+                <h1>Mideia</h1>
+                <div id="logo">
+                    <img src="../assets/logo.svg" alt="Logo Mideia" style="width: 80px; height: 80px;">
+                </div>
+                <div>
+                    <h3>Cadastro</h3>
+                </div>
+
+                <div class="label-float">
+                    <input type="text" id="nome" autocomplete="off" required>
+                    <label id="labelNome" for="Nome">Nome</label>
+                </div>
+
+                <div class="label-float">
+                    <input type="text" id="email" autocomplete="off" required>
+                    <label id="labelEmail" for="labelEmail">Email</label>
+                </div>
+
+                <div class="label-float">
+                    <input type="password" id="senha" required>
+                    <label id="labelSenha" for="Senha">Senha</label>
+                    <i class="fa fa-eye"></i>
+                </div>
+
+                <div class="label-float">
+                    <input type="text" id="cpf" autocomplete="off" required>
+                    <label id="labelCPF" for="CPF">CPF</label>
+                </div>
+
+                <div class="label-float">
+                    <input type="text" id="celular" autocomplete="off" required>
+                    <label id="labelCelular" for="Celular">Celular</label>
+                </div>
+
+
+                <div class="justify-center">
+                    <button onclick="cadastrar()">Cadastrar</button>
+                </div>
+            </div>
+        </div>
+
+
+        <footer>
+            <p class="white">2022 Mideia</p>
+        </footer>
+
+        <script src="../Controllers/cadastro.js"></script>
+</body>
+
+</html>

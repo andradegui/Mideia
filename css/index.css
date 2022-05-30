@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;700&display=swap');
+
+* {
+    margin:0;
+    padding:0;   
+    font-family: "Sora", "Helvetica"; 
+}
+
+.container{    
+    width: 100%;
+    padding-right: 10%;
+    padding-left: 10%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+h1{
+    text-align: start;
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="../assets/logo.svg" />
+  <link rel="stylesheet" href="../css/login.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <title>Login | Mideia</title>
+</head>
+
+<body>
+  <main>    
+    <div class="container">
+      <div class="card">
+        <div id="msgError"></div>
+        <h1>Mideia</h1>
+        <div id="logo">
+          <img src="../assets/logo.svg" alt="Logo Mideia" style="width: 80px; height: 80px;">
+        </div>
+        <div>
+          <h3>Entrar</h3>
+        </div>
+
+        <div class="label-float">
+          <input type="text" id="userEmail" autocomplete="off" required>
+          <label id="labelUserEmail" for="Email">Email</label>
+        </div>
+
+        <div class="label-float">
+          <input type="password" id="userSenha" required>
+          <label id="labelUserSenha" for="Senha">Senha</label>
+          <i class="fa fa-eye"></i>
+        </div>
+
+        <div class="justify-center">
+          <button onclick="entrar()">Entrar</button>
+        </div>
+
+        <div class="justify-center">
+          <hr>
+        </div>
+
+        <p>Não tem uma conta?
+          <a href="../Views/cadastro.html">Cadastre-se</a>
+        </p>
+      </div>
+    </div>
+
+
+    <footer>
+      <p class="white">2022 Mideia</p>
+    </footer>
+
+    <script src="../Controllers/login.js"></script>
+</body>
+
+</html>
