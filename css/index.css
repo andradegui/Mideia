@@ -1,19 +1,40 @@
 @import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;700&display=swap');
 
 * {
-    margin:0;
-    padding:0;   
-    font-family: "Sora", "Helvetica"; 
+    margin: 0;
+    padding: 0;
+    font-family: "Sora", "Helvetica" !important;
 }
 
-.container{    
-    width: 100%;
-    padding-right: 10%;
-    padding-left: 10%;
-    margin-right: auto;
-    margin-left: auto;
+main {
+    background-color: rgb(231, 231, 231);
 }
 
-h1{
-    text-align: start;
+.apresentacao {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5px;
+}
+
+h1 {
+    font-size: 45px !important;
+}
+
+.alinha {
+    margin-left: 15%;
+}
+
+.format-text {
+    display: flex;
+    justify-content: center;
+}
+
+a{
+    color: #2196f3!important;
+    text-decoration: none!important;
+}
+
+a:hover {
+    color: #74bffc!important;
 }
