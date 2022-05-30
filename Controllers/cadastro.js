@@ -102,7 +102,7 @@ senha.addEventListener("keyup", () => {
 
 //Validação CPF
 cpf.addEventListener("keyup", () => {
-  if (cpf.value.length > 11 || cpf.value.length == 0) {
+  if (cpf.value.length > 12 || cpf.value.length == 0) {
     labelCpf.setAttribute("style", "color: #ba000d;");
     labelCpf.innerHTML = "CPF *11 números";
     cpf.setAttribute("style", "border-color: #ba000d;");
@@ -117,7 +117,7 @@ cpf.addEventListener("keyup", () => {
 
 // Validação Celular
 celular.addEventListener("keyup", () => {
-  if (celular.value.length > 11 || celular.value.length == 0) {
+  if (celular.value.length > 12 || celular.value.length == 0) {
     labelCelular.setAttribute("style", "color: #ba000d;");
     labelCelular.innerHTML = "Celular *Máximo 11 números (DD + nº)";
     celular.setAttribute("style", "border-color: #ba000d;");
@@ -152,8 +152,8 @@ function cadastrar() {
      msgError.innerHTML = ''; 
 
      setTimeout(() => {
-      window.location.href = '../Views/login.html';
-     }, 2000);
+      window.location.href = '../Mideia/Views/login.html';
+     }, 3000);
      
   }
   else{
