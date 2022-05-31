@@ -24,6 +24,7 @@ header{
     font-size: 40px;
     font-weight: bold;
     margin-left: 20px;
+    align-items: center;
 }
 
 #btn-sair{    
@@ -33,7 +34,14 @@ header{
     width: 70px;
     height: 50px;
     border-radius: 15px;
-    border-color: #2196f3;
+    border-color: #EA5A5A;
+    background-color: #EA5A5A;  
+    color: #ba000d;  
+    cursor: pointer;  
+}
 
-
+#btn-sair:hover {
+    border-color: #ba000d;
+    background-color: #ba000d;  
+    color: #EA5A5A; 
 }
