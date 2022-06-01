@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../assets/logo.svg" />
-    <link rel="stylesheet" href="../css/feed.css"/>
+    <link rel="stylesheet" href="../css/feed.css" />
 
     <title>Mideia | Feed</title>
 
@@ -19,10 +19,14 @@
     </header>
 
     <main>
+        <div id="centraliza-logo">
+            <img src="../assets/logo.svg" id="logo" alt="Logo Mideia">
+        </div>
+
         <div class="post">
             <div class="user">
-                <div class="foto-user"></div>
-                <h3 id="logado"></h3>
+                <img src="../assets/user.png" alt="">
+                <h3 class="logado"></h3>
             </div>
 
 
@@ -31,15 +35,40 @@
 
                 <div class="buttons">
                     <div class="icones">
-                        <button class="btn-action"><img src="../assets/imagem.png" alt="Faça o post de uma imagem"></button>
-                        <button class="btn-action"><img src="../assets/camera.png" alt="Faça o post de um vídeo"></button>
-                        <button class="btn-action"><img src="../assets/gif.png" alt="Faça o post de um gif"></button>
+                        <button class="btn-action"><img src="../assets/imagem.svg"
+                                alt="Faça o post de uma imagem"></button>
+                        <button class="btn-action"><img src="../assets/video.svg"
+                                alt="Faça o post de um vídeo"></button>
+                        <button class="btn-action"><img src="../assets/gif.svg" alt="Faça o post de um vídeo"></button>
                     </div>
 
                     <button type="submit" class="btn-submit">Publicar</button>
                 </div>
             </form>
         </div>
+
+        <ul class="posts">
+            <li class="post">
+                <div class="infor-user-post">
+                    <div class="user">
+                        <img src="../assets/user.png" alt="">
+                        <h3 class="logado"></h3>
+                    </div>
+
+                    <div class="hour">
+                        <p id="hour">21</p>
+                    </div>
+
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Numquam aut earum quia quasi voluptates aliquam possimus ab, cumque maiores necessitatibus repudiandae sapiente excepturi eius quo suscipit odit aperiam iusto inventore!
+                    </p>
+
+                    <div class="action-post">
+                        <button type="button" class="action-post1"><img src="../assets/heart.svg" alt="Curtir"></button>
+                        <button type="button" class="action-post2"><img src="../assets/comentario.svg" alt="Comentar"></button>                        
+                    </div>
+                </div>
+            </li>
+        </ul>
     </main>
 
 

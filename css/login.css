@@ -99,6 +99,7 @@ button{
     border-color: #000000;
     padding: 7px;
     font-size:12pt;
+    font-weight: bold;
     margin-top: 20px;
     border-radius: 4px;
     cursor: pointer;
