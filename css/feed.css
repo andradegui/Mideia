@@ -97,13 +97,13 @@ h3 {
     color: #000;
 }
 
-.form-post {
+.formPost {
     display: flex;
     flex-direction: column;
     width: 100%;
 }
 
-.form-post textarea {
+.publication {
     margin: 15px 0;
     padding: 25px;
     height: 90px;
