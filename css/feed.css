@@ -1,33 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;700&display=swap');
 
 * {
-    margin:0;
-    padding:0;   
-    font-family: "Sora", "Helvetica"; 
-    box-sizing: border-box;    
+    margin: 0;
+    padding: 0;
+    font-family: "Sora", "Helvetica";
+    box-sizing: border-box;
 }
 
 li {
     list-style: none;
 }
 
-header{
+header {
     width: 100%;
     height: 50px;
     background: #2196f3;
     display: flex;
     justify-content: space-between;
-    box-shadow: 1px 0px 3px rgba(0,0,0,0.5);
+    box-shadow: 1px 0px 3px rgba(0, 0, 0, 0.5);
 }
 
-#midea{
+#midea {
     font-size: 40px;
     font-weight: bold;
     margin-left: 20px;
     align-items: center;
 }
 
-#btn-sair{    
+#btn-sair {
     margin-right: 20px;
     font-size: 21px;
     font-weight: bold;
@@ -36,37 +36,36 @@ header{
     border-radius: 15px;
     border: 0;
     border-color: #EA5A5A;
-    background-color: #EA5A5A;  
-    color: #ba000d;  
-    cursor: pointer;  
+    background-color: #EA5A5A;
+    color: #640107;
+    cursor: pointer;
     transition: all .3s ease-out;
 }
 
 #btn-sair:hover {
-    border-color: #ba000d;
-    background-color: #ba000d;  
-    color: #EA5A5A; 
+    border-color: #b11f1f;
+    background-color: #e12929;    
 }
 
-main{
+main {
     max-width: 900px;
     margin: 0 auto;
 }
 
-#centraliza-logo{
+#centraliza-logo {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 20px;
 }
 
-#logo{
-    width: 80px; 
+#logo {
+    width: 80px;
     height: 80px;
-   
+
 }
 
-.post{    
+.post {
     width: 100%;
     height: 240px;
     display: flex;
@@ -76,35 +75,35 @@ main{
     padding: 25px;
     background: #2196f3;
     border-radius: 10px;
-    box-shadow: 5px 5px 5px 4px rgba(0.3, 0.3, 0.3, 0.3);   
+    box-shadow: 5px 5px 5px 4px rgba(0.3, 0.3, 0.3, 0.3);
 }
 
-.user{
+.user {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: start;
+    justify-content: start;
 }
 
-.foto-user{
+.foto-user {
     width: 35px;
     height: 35px;
     background: #333;
     border-radius: 40%
 }
 
-h3{
+h3 {
     font-size: 16px;
     margin-left: 10px;
-    color: #000; 
+    color: #000;
 }
 
-.form-post{
-    display: flex;    
+.form-post {
+    display: flex;
     flex-direction: column;
     width: 100%;
 }
 
-.form-post textarea{
+.form-post textarea {
     margin: 15px 0;
     padding: 25px;
     height: 90px;
@@ -115,21 +114,21 @@ h3{
     border: 0;
 }
 
-.buttons{
+.buttons {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.btn-action{
+.btn-action {
     outline: none;
     background: #2196f3;
     border: 0;
     cursor: pointer;
-    margin-right: 10px;        
+    margin-right: 10px;
 }
 
-.btn-submit{
+.btn-submit {
     background: #000;
     padding: 10px 50px;
     color: #fff;
@@ -141,13 +140,63 @@ h3{
     transition: all .3s ease-out;
 }
 
-.btn-submit:hover{
+.btn-submit:hover {
     background: #fff;
     color: #000;
 }
 
+.posts li.post {
+
+    background-color: #2196f3;
+    border-bottom: 10px;
+    padding: 25px;
+    width: 100%;
+    box-shadow: 5px 5px 5px 4px rgba(0.3, 0.3, 0.3, 0.3);
+}
+
+.hour {
+    padding-top: 5px;
+    padding-left: 5px;
+}
+
+.posts li.post p {
+    width: 100%;
+    margin: 15px 0;
+    font-weight: bold;
+}
+
+.btn-action-post {
+    padding: 5px 5px;
+    border: 0;    
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    margin-right: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
 .action-post1{
     background: #EA5A5A;
-    outline: none;
-    border: 0;
 }
+
+.action-post1:hover{
+    background: #fa3946;
+}
+
+.action-post2{
+    background: #d7c03d;
+}
+
+.action-post2:hover{
+    background: #ffda09;
+}
+.action-post3{
+    background: #ce7435;
+}
+
+.action-post3:hover{
+    background: #ee6808;
+}
+

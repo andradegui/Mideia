@@ -58,7 +58,7 @@ function entrar(){
     labelUserSenha.setAttribute('style', 'border-color: #ba000d');
     senha.setAttribute('style', 'border-color: #ba000d');
     msgError.setAttribute('style', 'display: block');
-    msgError.innerHTML = 'Email ou senha incorretos';
+    msgError.innerHTML = '<strong>Email ou senha incorretos</strong>';
 
     email.focus();
   }
