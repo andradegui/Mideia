@@ -23,14 +23,16 @@
             <img src="../assets/logo.svg" id="logo" alt="Logo Mideia">
         </div>
 
-        <div class="post">
+        <div id="msgError"></div>
+
+        <div class="post">            
             <div class="user">
                 <img src="../assets/user.png" alt="">
                 <h3 class="logado"></h3>
             </div>
 
 
-            <form action="" class="formPost">
+            <form action="" id="formPost">
                 <textarea id="textarea" class="publication" name="textarea" placeholder="No que você está pesando hoje?"></textarea>
 
                 <div class="buttons">
@@ -47,8 +49,8 @@
             </form>
         </div>
 
-        <ul class="posts">
-            <li class="post">
+        <ul id="posts">
+            <!-- <li class="post">
                 <div class="info-user-post">
                     <div class="user">
                         <img src="../assets/user.png" alt="">
@@ -68,39 +70,14 @@
                         <button type="button" class="btn-action-post action-post3"><img src="../assets/share.svg" alt="Compartilhar"></button>                        
                     </div>
                 </div>
-            </li>
-
-
-            <li class="post">
-                <div class="info-user-post">
-                    <div class="user">
-                        <img src="../assets/user.png" alt="">
-                        <h3 class="nameUser"></h3>
-                    </div>
-
-                    <div class="hour">
-                        <span id="timePost">21</span>
-                    </div>
-
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Numquam aut earum quia quasi voluptates aliquam possimus ab, cumque maiores necessitatibus repudiandae sapiente excepturi eius quo suscipit odit aperiam iusto inventore!
-                    </p>
-
-                    <div class="action-post">
-                        <button type="button" class="btn-action-post action-post1"><img src="../assets/heart.svg" alt="Curtir"></button>
-                        <button type="button" class="btn-action-post action-post2"><img src="../assets/comentario.svg" alt="Comentar"></button>                        
-                        <button type="button" class="btn-action-post action-post3"><img src="../assets/share.svg" alt="Compartilhar"></button>                        
-                    </div>
-                </div>
-            </li>
-
-
-            
+            </li> -->            
         </ul>
     </main>
 
 
-    <script src="../Controllers/feed.js"></script>
-    <script type="module" src="../Controllers/make-post.js"></script>
+    <script type='module' src="../Controllers/makePost.js"></script>    
+    <script src="../Controllers/feed.js"></script>    
+    
 </body>
 
 </html>
