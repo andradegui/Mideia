@@ -87,6 +87,10 @@ main {
     display: none;
 }
 
+input[type='file']{
+    display: none;   
+}
+
 .user {
     display: flex;
     align-items: start;
@@ -134,7 +138,7 @@ h3 {
     background: #2196f3;
     border: 0;
     cursor: pointer;
-    margin-right: 10px;
+    margin-right: 40px;
 }
 
 .btn-submit {
@@ -207,5 +211,9 @@ h3 {
 
 .action-post3:hover{
     background: #ee6808;
+}
+
+.hide{
+    display: none;
 }
 

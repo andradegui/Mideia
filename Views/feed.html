@@ -25,7 +25,7 @@
 
         <div id="msgError"></div>
 
-        <div class="post">            
+        <div class="post">
             <div class="user">
                 <img src="../assets/user.png" alt="">
                 <h3 class="logado"></h3>
@@ -33,21 +33,24 @@
 
 
             <form action="" id="formPost">
-                <textarea id="textarea" class="publicacao" name="textarea" placeholder="No que você está pensando hoje?"></textarea>
+                <textarea id="textarea" class="publicacao" name="textarea"
+                    placeholder="No que você está pensando hoje?"></textarea>
 
                 <div class="buttons">
                     <div class="icones">
-                        <button class="btn-action"><img src="../assets/imagem.svg"
-                                alt="Faça o post de uma imagem"></button>
-                        <button class="btn-action"><img src="../assets/video.svg"
-                                alt="Faça o post de um vídeo"></button>
-                        <button class="btn-action"><img src="../assets/gif.svg" alt="Faça o post de um vídeo"></button>
+                        <input id="action1" type="file" class="btn-action" accept="image/*">
+                            <img id="imagem" src="../assets/imagem.svg" alt="Faça o post de uma imagem">
+                        <input id="action2" type="file" class="btn-action" accept="video/*">
+                            <img id="video" src="../assets/video.svg" alt="Faça o post de um vídeo">
+                        <input id="action3" type="file" class="btn-action" accept="video/*">
+                            <img id="gif" src="../assets/gif.svg" alt="Faça o post de um gif">
                     </div>
 
                     <button type="submit" class="btn-submit">Publicar</button>
                 </div>
             </form>
         </div>
+
 
         <ul id="posts">
             <!-- <li class="post">
@@ -58,26 +61,28 @@
                     </div>
 
                     <div class="hour">
-                        <span id="timePost">21</span>
+                        <span id="timePost"></span>
                     </div>
 
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Numquam aut earum quia quasi voluptates aliquam possimus ab, cumque maiores necessitatibus repudiandae sapiente excepturi eius quo suscipit odit aperiam iusto inventore!
+                    <p>
                     </p>
 
                     <div class="action-post">
-                        <button type="button" class="btn-action-post action-post1"><img src="../assets/heart.svg" alt="Curtir"></button>
-                        <button type="button" class="btn-action-post action-post2"><img src="../assets/comentario.svg" alt="Comentar"></button>                        
-                        <button type="button" class="btn-action-post action-post3"><img src="../assets/share.svg" alt="Compartilhar"></button>                        
+                        <button type="button" class="btn-action-post action-post1"><img src="../assets/heart.svg"
+                                alt="Curtir"></button>
+                        <button type="button" class="btn-action-post action-post2"><img src="../assets/comentario.svg"
+                                alt="Comentar"></button>
+                        <button type="button" class="btn-action-post action-post3"><img src="../assets/share.svg"
+                                alt="Compartilhar"></button>
                     </div>
                 </div>
-            </li> -->            
+            </li> -->
         </ul>
     </main>
 
 
-    <script type='module' src="../Controllers/makePost.js"></script>    
-    <script src="../Controllers/feed.js"></script>    
-    
+    <script src="../Controllers/feed.js"></script>
+
 </body>
 
 </html>
