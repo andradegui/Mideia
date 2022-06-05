@@ -18,12 +18,12 @@ function sair(){
     window.location.href = '../Views/login.html';
 }
 
-// let imagem = document.getElementById('imagem');
-// let imagemInput = document.querySelector('#action1');
+ let imagem = document.getElementById('imagem');
+ let imagemInput = document.querySelector('#action1');
 
-// imagem.addEventListener('click', () => {
-//     imagemInput.click();
-// });
+ imagem.addEventListener('click', () => {
+     imagemInput.click();
+ });
 
 
 class makePost {

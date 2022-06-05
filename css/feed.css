@@ -87,10 +87,6 @@ main {
     display: none;
 }
 
-input[type='file']{
-    display: none;   
-}
-
 .user {
     display: flex;
     align-items: start;
@@ -133,12 +129,36 @@ h3 {
     justify-content: space-between;
 }
 
+.icones{
+    cursor: pointer;
+}
+
+input[type='file']{
+    display: none;  
+    margin-right: 15px; 
+  
+}
+
 .btn-action {
     outline: none;
     background: #2196f3;
     border: 0;
     cursor: pointer;
     margin-right: 40px;
+    cursor: pointer;
+}
+
+#imagem{
+    margin-left: 5px;
+}
+
+#video{
+    margin-left: 5px;
+}
+
+#gif{
+    margin-bottom: -3px;
+    margin-left: 5px;
 }
 
 .btn-submit {
@@ -188,6 +208,11 @@ h3 {
     border-radius: 10px;
     cursor: pointer;
     transition: background 0.2s;
+}
+
+#imageUpload{
+    width: 375px;
+    height: 211px;
 }
 
 .action-post1{
