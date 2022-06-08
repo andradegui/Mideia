@@ -33,17 +33,20 @@
 
 
             <form action="" id="formPost">
+
                 <textarea id="textarea" class="publicacao" name="textarea"
                     placeholder="No que você está pensando hoje?"></textarea>
 
+
                 <div class="buttons">
                     <div class="icones">
-                        <input id="action1" type="file" class="btn-action" accept="image/*">
-                            <img id="imagem" src="../assets/imagem.svg" alt="Faça o post de uma imagem">
+                        <input type="file" id="flImage" name="fImage" accept="image/*">
+                        <img src="../assets/imagem.svg" alt="Selecione uma imagem" title="imagem" id="imgPhoto"
+                            style="width:30px;">
                         <input id="action2" type="file" class="btn-action" accept="video/*">
-                            <img id="video" src="../assets/video.svg" alt="Faça o post de um vídeo">
+                        <img id="video" src="../assets/video.svg" alt="Faça o post de um vídeo">
                         <input id="action3" type="file" class="btn-action" accept="video/*">
-                            <img id="gif" src="../assets/gif.svg" alt="Faça o post de um gif">
+                        <img id="gif" src="../assets/gif.svg" alt="Faça o post de um gif">
                     </div>
 
                     <button type="submit" class="btn-submit">Publicar</button>
@@ -51,33 +54,8 @@
             </form>
         </div>
 
-        <!-- <div id="imageUpload"></div> -->
-
         <ul id="posts">
-            <!-- <li class="post">
-                <div class="info-user-post">
-                    <div class="user">
-                        <img src="../assets/user.png" alt="">
-                        <h3 class="nameUser"></h3>
-                    </div>
-
-                    <div class="hour">
-                        <span id="timePost"></span>
-                    </div>
-
-                    <p>
-                    </p>
-
-                    <div class="action-post">
-                        <button type="button" class="btn-action-post action-post1"><img src="../assets/heart.svg"
-                                alt="Curtir"></button>
-                        <button type="button" class="btn-action-post action-post2"><img src="../assets/comentario.svg"
-                                alt="Comentar"></button>
-                        <button type="button" class="btn-action-post action-post3"><img src="../assets/share.svg"
-                                alt="Compartilhar"></button>
-                    </div>
-                </div>
-            </li> -->
+            <img id="uploadImage" src="" alt="">
         </ul>
     </main>
 

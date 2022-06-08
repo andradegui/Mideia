@@ -6,31 +6,25 @@ let nameUser = document.querySelector('.nameUser');
 logado.innerHTML = userLogado.nome;
 
 //Serve para ter o controle de acesso ao feed
-if(localStorage.getItem('token') == null){
-    alert('Você precisa estar logado para acessar essa págin');
+if (localStorage.getItem('token') == null || localStorage.getItem('token') == '' || localStorage.getItem('userLogado') == null) {
+    alert('Você precisa estar logado para acessar essa página');
     window.location.href = '../Views/login.html';
 }
 
 //Excluir token de controle de acesso
-function sair(){
+function sair() {
     localStorage.removeItem('token');
     localStorage.removeItem('userLogado');
     window.location.href = '../Views/login.html';
 }
 
- let imagem = document.getElementById('imagem');
- let imagemInput = document.querySelector('#action1');
-
- imagem.addEventListener('click', () => {
-     imagemInput.click();
- });
-
 
 class makePost {
-    constructor(idForm, idTextArea, idUlPost) {
+    constructor(idForm, idTextArea, idUlPost, idPostImage) {
         this.form = document.getElementById(idForm);
         this.textarea = document.getElementById(idTextArea);
         this.ulPost = document.getElementById(idUlPost);
+        this.postImage = document.getElementById(idPostImage);
         this.addSubmit();
     }
 
@@ -39,14 +33,14 @@ class makePost {
     }
 
     formValidate(value) {
-        if (value == '' || value == null || value == undefined) {
+        //valida os valores do campo texto para publicação
+        if (value === '' || value === null || value === undefined || value.length < 3) {
             return false
         }
-
-        return true;
+        return true
     }
 
-    getTime(){
+    getTime() {
         const time = new Date();
         const hour = time.getHours();
         const minutes = time.getMinutes();
@@ -58,14 +52,14 @@ class makePost {
     }
 
 
-    addSubmit() {       
+    addSubmit() {
 
         const handleSubmit = (event) => {
             event.preventDefault();
             if (this.formValidate(this.textarea.value)) {
                 const time = this.getTime();
                 const newPost = document.createElement('li');
-                newPost.classList.add('post');
+                newPost.classList.add('postUser');
                 newPost.innerHTML = `
                     <div class="info-user-post">
                         <div class="user">
@@ -79,23 +73,30 @@ class makePost {
 
                         <p>
                             ${this.textarea.value} 
-                        </p>
+                        </p>`
 
-                        <div class="action-post">
+                if (this.postImage.mostrar)
+                    newPost.innerHTML += `<img src="${this.postImage.src}" style="width:200px; margin-bottom: 200px;">`;
+
+
+                    `<div class="action-post">
                             <button type="button" class="btn-action-post action-post1"><img src="../assets/heart.svg" alt="Curtir"></button>
                             <button type="button" class="btn-action-post action-post2"><img src="../assets/comentario.svg" alt="Comentar"></button>                        
                             <button type="button" class="btn-action-post action-post3"><img src="../assets/share.svg" alt="Compartilhar"></button>                        
                         </div>
-                    </div>
-                `;
+                    </div>`;
+
 
                 this.ulPost.append(newPost);
                 this.textarea.value = ""; //Para vir vazio o próximo  post
+                this.postImage.src = null;                
+                this.postImage.mostrar = false;
 
                 msgError.setAttribute('style', 'display: none');
                 msgError.innerHTML = '';
 
-            }else{
+
+            } else {
                 msgError.setAttribute('style', 'display: block');
                 msgError.innerHTML = '<strong>Verifique seu post, ele parece estar vazio!</strong>';
             }
@@ -106,4 +107,30 @@ class makePost {
 
 }
 
-const makeForm = new makePost('formPost', 'textarea', 'posts');
+const makeForm = new makePost('formPost', 'textarea', 'posts', 'uploadImage');
+
+
+
+const flImage = document.querySelector("#flImage");
+const flVideo = document.querySelector("#flVideo");
+const flAudio = document.querySelector("#flAudio");
+flImage.mostrar = false;
+
+
+let photo = document.getElementById('imgPhoto');
+let file = document.getElementById('flImage');
+
+photo.addEventListener('click', () => {
+    file.click();
+});
+
+//função upload da imagem
+flImage.addEventListener("change", function () {
+    const reader = new FileReader();
+    reader.addEventListener("load", () => {
+        const uploaded_image = reader.result;
+        document.querySelector("#uploadImage").mostrar = true;
+        document.querySelector("#uploadImage").src = uploaded_image;
+    });
+    reader.readAsDataURL(this.files[0]);
+});

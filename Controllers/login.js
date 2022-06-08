@@ -28,6 +28,20 @@ function entrar(){
     senha: ''
   }
 
+  if(email.value == '' && senha.value == ''){
+    
+    labelUserEmail.setAttribute('style', 'color: #ba000d');
+    email.setAttribute('style', 'border-color: #ba000d');
+    labelUserSenha.setAttribute('style', 'border-color: #ba000d');
+    senha.setAttribute('style', 'border-color: #ba000d');
+    msgError.setAttribute('style', 'display: block');
+    msgError.innerHTML = '<strong>Email e senha não preenchidos</strong>';
+
+    email.focus();
+
+    return false;
+  }
+
   listaUser = JSON.parse(localStorage.getItem('listaUser'));
 
   listaUser.forEach((item) => {
@@ -41,15 +55,15 @@ function entrar(){
     }
   })
 
-  if(email.value == userValid.email && senha.value == userValid.senha){
-
-    window.location.href = '../Views/feed.html';
+  if(email.value == userValid.email && senha.value == userValid.senha){    
 
     //Criando token para controle de acesso 
-    let token = Math.random().toString(16).substr(10);
+    let token = Math.random().toString(16).substr(4);
     localStorage.setItem('token', token);
     
     localStorage.setItem('userLogado', JSON.stringify(userValid));
+
+    window.location.href = '../Views/feed.html';
 
   }else{
 

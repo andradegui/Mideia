@@ -44,7 +44,7 @@ header {
 
 #btn-sair:hover {
     border-color: #b11f1f;
-    background-color: #e12929;    
+    background-color: #e12929;
 }
 
 main {
@@ -78,12 +78,26 @@ main {
     box-shadow: 5px 5px 5px 4px rgba(0.3, 0.3, 0.3, 0.3);
 }
 
-#msgError{
+.postUser {
+    width: 100%;
+    height: 340px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 20px 0;
+    padding: 25px;
+    background: #2196f3;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px 4px rgba(0.3, 0.3, 0.3, 0.3);
+}
+
+#msgError {
     text-align: center;
-    color: #640107 ;
-    background-color:#EA5A5A;;
-    padding:5px;
-    border-radius:10px;
+    color: #640107;
+    background-color: #EA5A5A;
+    ;
+    padding: 5px;
+    border-radius: 10px;
     display: none;
 }
 
@@ -108,8 +122,8 @@ h3 {
 
 #formPost {
     display: flex;
-    flex-direction: column;
     width: 100%;
+    flex-direction: column;
 }
 
 .publicacao {
@@ -120,7 +134,7 @@ h3 {
     resize: none;
     outline: none;
     border-color: #000;
-    border: 0;
+    border: 0;    
 }
 
 .buttons {
@@ -129,14 +143,14 @@ h3 {
     justify-content: space-between;
 }
 
-.icones{
+.icones {
     cursor: pointer;
 }
 
-input[type='file']{
-    display: none;  
-    margin-right: 15px; 
-  
+input[type='file'] {
+    display: none;
+    margin-right: 15px;
+
 }
 
 .btn-action {
@@ -148,15 +162,15 @@ input[type='file']{
     cursor: pointer;
 }
 
-#imagem{
+#imagem {
     margin-left: 5px;
 }
 
-#video{
+#video {
     margin-left: 5px;
 }
 
-#gif{
+#gif {
     margin-bottom: -3px;
     margin-left: 5px;
 }
@@ -188,7 +202,7 @@ input[type='file']{
 }
 
 .hour {
-    padding-top: 5px;    
+    padding-top: 5px;
 }
 
 .posts li.post p {
@@ -199,7 +213,7 @@ input[type='file']{
 
 .btn-action-post {
     padding: 5px 5px;
-    border: 0;    
+    border: 0;
     align-items: center;
     justify-content: center;
     outline: none;
@@ -210,35 +224,35 @@ input[type='file']{
     transition: background 0.2s;
 }
 
-#imageUpload{
+#imageUpload {
     width: 375px;
     height: 211px;
 }
 
-.action-post1{
+.action-post1 {
     background: #EA5A5A;
 }
 
-.action-post1:hover{
+.action-post1:hover {
     background: #fa3946;
 }
 
-.action-post2{
+.action-post2 {
     background: #d7c03d;
 }
 
-.action-post2:hover{
+.action-post2:hover {
     background: #ffda09;
 }
-.action-post3{
+
+.action-post3 {
     background: #ce7435;
 }
 
-.action-post3:hover{
+.action-post3:hover {
     background: #ee6808;
 }
 
-.hide{
+.hide {
     display: none;
 }
-
