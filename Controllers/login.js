@@ -32,7 +32,7 @@ function entrar(){
     
     labelUserEmail.setAttribute('style', 'color: #ba000d');
     email.setAttribute('style', 'border-color: #ba000d');
-    labelUserSenha.setAttribute('style', 'border-color: #ba000d');
+    labelUserSenha.setAttribute('style', 'color: #ba000d');
     senha.setAttribute('style', 'border-color: #ba000d');
     msgError.setAttribute('style', 'display: block');
     msgError.innerHTML = '<strong>Email e senha não preenchidos</strong>';

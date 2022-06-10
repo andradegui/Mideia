@@ -20,12 +20,17 @@ function sair() {
 
 
 class makePost {
-    constructor(idForm, idTextArea, idUlPost, idPostImage) {
+    constructor(idForm, idTextArea, idUlPost, idPostImage, idPostVideo) {
         this.form = document.getElementById(idForm);
         this.textarea = document.getElementById(idTextArea);
         this.ulPost = document.getElementById(idUlPost);
         this.postImage = document.getElementById(idPostImage);
+        this.postVideo = document.getElementById(idPostVideo);
+
+        this.posts = [];
         this.addSubmit();
+
+        document.getElementById('posts').innerHTML = localStorage.getItem('posts');
     }
 
     onSubmit(func) {
@@ -34,7 +39,7 @@ class makePost {
 
     formValidate(value) {
         //valida os valores do campo texto para publicação
-        if (value === '' || value === null || value === undefined || value.length < 3) {
+        if (value === '' || value === null || value === undefined) {
             return false
         }
         return true
@@ -71,26 +76,31 @@ class makePost {
                             <span id="timePost">${time}</span>
                         </div>
 
-                        <p>
+                        <p style="margin-top: 10px; justify-content: center; align-items: center; display:flex;">
                             ${this.textarea.value} 
                         </p>`
 
                 if (this.postImage.mostrar)
-                    newPost.innerHTML += `<img src="${this.postImage.src}" style="width:200px; margin-bottom: 200px;">`;
+                    newPost.innerHTML += `<img src="${this.postImage.src}"style="width:200px; margin-bottom: 200px; border-radius: 10px; outline: none; border: none;">`;
 
-
-                    `<div class="action-post">
-                            <button type="button" class="btn-action-post action-post1"><img src="../assets/heart.svg" alt="Curtir"></button>
-                            <button type="button" class="btn-action-post action-post2"><img src="../assets/comentario.svg" alt="Comentar"></button>                        
-                            <button type="button" class="btn-action-post action-post3"><img src="../assets/share.svg" alt="Compartilhar"></button>                        
-                        </div>
-                    </div>`;
+                if (this.postVideo.mostrar)
+                    newPost.innerHTML += `<video src="${this.postVideo.src}"controls style="width:300px; margin-bottom: 300px; border-radius: 10px;"></video>`;
 
 
                 this.ulPost.append(newPost);
+
                 this.textarea.value = ""; //Para vir vazio o próximo  post
-                this.postImage.src = null;                
+
+                this.postImage.src = null;
                 this.postImage.mostrar = false;
+                this.postImage.value = "";
+
+                this.postVideo.src = null;
+                this.postVideo.mostrar = false;
+
+
+                this.posts = [...this.posts, '<li class="postUser">' + newPost.innerHTML + '</li>'];
+                localStorage.setItem('posts', this.posts)
 
                 msgError.setAttribute('style', 'display: none');
                 msgError.innerHTML = '';
@@ -107,30 +117,62 @@ class makePost {
 
 }
 
-const makeForm = new makePost('formPost', 'textarea', 'posts', 'uploadImage');
+const makeForm = new makePost('formPost', 'textarea', 'posts', 'previewImagem', 'videoCarregado');
 
-
-
-const flImage = document.querySelector("#flImage");
-const flVideo = document.querySelector("#flVideo");
-const flAudio = document.querySelector("#flAudio");
-flImage.mostrar = false;
-
-
-let photo = document.getElementById('imgPhoto');
-let file = document.getElementById('flImage');
+let photo = document.getElementById('imgIcon');
+let file = document.getElementById('inputImagem');
 
 photo.addEventListener('click', () => {
     file.click();
 });
 
-//função upload da imagem
-flImage.addEventListener("change", function () {
+//Upload da Imagem
+const inputImagem = document.querySelector("#inputImagem");
+inputImagem.mostrar = false;
+
+let postMultimidea = document.querySelector("#postMultimidea"); 
+let previewImagem = document.querySelector("#previewImagem");
+
+inputImagem.addEventListener("change", function () {
+    const reader = new FileReader();
+
+    previewImagem.style.display = 'block';
+
+    reader.addEventListener("load", () => {        
+        let imagemCarregada = reader.result;
+        previewImagem.mostrar = true;
+        previewImagem.src = imagemCarregada;        
+    });
+    reader.readAsDataURL(this.files[0]);  
+      
+});
+
+
+let video = document.getElementById('video');
+let inputVideo = document.getElementById('inputVideo');
+
+ video.addEventListener('click', () => {
+     inputVideo.click();
+});
+
+inputVideo.mostrar = false;
+
+let videoCarregado = document.querySelector("#videoCarregado");
+
+inputVideo.addEventListener("change", function() {
     const reader = new FileReader();
     reader.addEventListener("load", () => {
-        const uploaded_image = reader.result;
-        document.querySelector("#uploadImage").mostrar = true;
-        document.querySelector("#uploadImage").src = uploaded_image;
+        const uploadedVideo = reader.result;
+        videoCarregado.mostrar = true;
+        videoCarregado.src = uploadedVideo;
     });
     reader.readAsDataURL(this.files[0]);
 });
+
+
+
+// const flAudio = document.querySelector("#flAudio");
+
+
+
+

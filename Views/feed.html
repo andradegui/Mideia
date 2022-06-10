@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../assets/logo.svg" />
-    <link rel="stylesheet" href="../css/feed.css" />
+    <link rel="stylesheet" href="../css/feed.css" />    
 
     <title>Mideia | Feed</title>
 
@@ -40,22 +40,28 @@
 
                 <div class="buttons">
                     <div class="icones">
-                        <input type="file" id="flImage" name="fImage" accept="image/*">
-                        <img src="../assets/imagem.svg" alt="Selecione uma imagem" title="imagem" id="imgPhoto"
+                        <input id="inputImagem" type="file" name="inputImagem" accept="image/*">
+                            <img id="imgIcon" src="../assets/imagem.svg" alt="Selecione uma imagem" title="imagem" 
                             style="width:30px;">
-                        <input id="action2" type="file" class="btn-action" accept="video/*">
-                        <img id="video" src="../assets/video.svg" alt="Faça o post de um vídeo">
-                        <input id="action3" type="file" class="btn-action" accept="video/*">
-                        <img id="gif" src="../assets/gif.svg" alt="Faça o post de um gif">
+                        <input id="inputVideo" type="file" class="btn-action" accept="video/*">
+                            <img id="video" src="../assets/video.svg" alt="Faça o post de um vídeo">
+                        <input id="inputGif" type="file" class="btn-action" accept="video/*">
+                            <img id="gif" src="../assets/gif.svg" alt="Faça o post de um gif">
                     </div>
 
-                    <button type="submit" class="btn-submit">Publicar</button>
+                    <button id="btnPost" type="submit" class="btn-submit">Publicar</button>
                 </div>
-            </form>
+            </form>            
+        </div>
+
+        <div class="postMultimidea">
+            <h3 id="preview">Preview Multimídea</h3>            
+            <img id="previewImagem" src="" alt="">
+            <video id="videoCarregado" src=""></video>
         </div>
 
         <ul id="posts">
-            <img id="uploadImage" src="" alt="">
+            
         </ul>
     </main>
 
