@@ -2,8 +2,20 @@ let userLogado = JSON.parse(localStorage.getItem('userLogado'));
 
 let logado = document.querySelector('.logado');
 let nameUser = document.querySelector('.nameUser');
-
 logado.innerHTML = userLogado.nome;
+
+let photo = document.getElementById('imgIcon');
+let file = document.getElementById('inputImagem');
+const inputImagem = document.querySelector("#inputImagem");
+let previewImagem = document.querySelector("#previewImagem");
+
+let video = document.getElementById('video');
+let inputVideo = document.getElementById('inputVideo');
+let videoCarregado = document.querySelector("#videoCarregado");
+
+let audio = document.getElementById('audio');
+let inputAudio = document.getElementById('inputAudio');
+
 
 //Serve para ter o controle de acesso ao feed
 if (localStorage.getItem('token') == null || localStorage.getItem('token') == '' || localStorage.getItem('userLogado') == null) {
@@ -17,7 +29,6 @@ function sair() {
     localStorage.removeItem('userLogado');
     window.location.href = '../Views/login.html';
 }
-
 
 class makePost {
     constructor(idForm, idTextArea, idUlPost, idPostImage, idPostVideo, idPostAudio) {
@@ -66,7 +77,7 @@ class makePost {
                 const time = this.getTime();
                 const newPost = document.createElement('li');
                 newPost.classList.add('postUser');
-                newPost.innerHTML += `
+                newPost.innerHTML = `
                     <div class="info-user-post">
                         <div class="user">
                             <img src="../assets/user.png" alt="Icone User">
@@ -126,18 +137,12 @@ class makePost {
 
 const makeForm = new makePost('formPost', 'textarea', 'posts', 'previewImagem', 'videoCarregado', 'uploadAudio');
 
-let photo = document.getElementById('imgIcon');
-let file = document.getElementById('inputImagem');
-
+// Imagem
 photo.addEventListener('click', () => {
     file.click();
 });
 
-//Upload da Imagem
-const inputImagem = document.querySelector("#inputImagem");
 inputImagem.mostrar = false;
-
-let previewImagem = document.querySelector("#previewImagem");
 
 inputImagem.addEventListener("change", function () {
     const reader = new FileReader();
@@ -153,17 +158,12 @@ inputImagem.addEventListener("change", function () {
 
 });
 
-
-let video = document.getElementById('video');
-let inputVideo = document.getElementById('inputVideo');
-
+//Video
 video.addEventListener('click', () => {
     inputVideo.click();
 });
 
 inputVideo.mostrar = false;
-
-let videoCarregado = document.querySelector("#videoCarregado");
 
 inputVideo.addEventListener("change", function () {
     const reader = new FileReader();
@@ -175,11 +175,7 @@ inputVideo.addEventListener("change", function () {
     reader.readAsDataURL(this.files[0]);
 });
 
-
-let audio = document.getElementById('audio');
-let inputAudio = document.getElementById('inputAudio');
-
-
+//Audio
 audio.addEventListener('click', () => {
     inputAudio.click();
 });
