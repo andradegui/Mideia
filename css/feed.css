@@ -186,7 +186,7 @@ input[type='file'] {
     margin-left: 5px;
 }
 
-#gif {
+#audio {
     margin-bottom: -3px;
     margin-left: 5px;
 }
@@ -240,31 +240,47 @@ input[type='file'] {
     transition: background 0.2s;
 }
 
+.flex-2-column{
+    width: 50%;
+    flex-grow: 1;
+}
+
 .postMultimidea{
     width: 40%;
     height: 260px;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    margin-right: auto;
+    align-items: center;  
     margin-left: auto;
+    margin-right: auto;
     padding: 25px;
     background: #2196f3;
     border-radius: 10px;
     box-shadow: 5px 5px 5px 4px rgba(0.3, 0.3, 0.3, 0.3);    
 }
 
-#previewImagem {
-    width: 200px;
-    height: 200px;
-    border-radius: 10px;
-    display: none;
+#previewImagem {      
+    border-radius: 10px;    
     margin-right: auto;
-    margin-left: auto;    
-}
+    margin-left: auto;  
+    width: 180px;
+    border: none;  
+} 
 
 #videoCarregado {
     width: 300px;
     height: 300px;
     border-radius: 10px;
+}
+
+.btn-canvas{
+    background: #000;
+    padding: 5px 25px;
+    color: #fff;
+    font-weight: bold;
+    outline: none;
+    cursor: pointer;
+    border: 0;
+    border-radius: 15px;
+    transition: all .3s ease-out;
 }

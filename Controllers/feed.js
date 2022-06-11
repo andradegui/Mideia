@@ -20,12 +20,13 @@ function sair() {
 
 
 class makePost {
-    constructor(idForm, idTextArea, idUlPost, idPostImage, idPostVideo) {
+    constructor(idForm, idTextArea, idUlPost, idPostImage, idPostVideo, idPostAudio) {
         this.form = document.getElementById(idForm);
         this.textarea = document.getElementById(idTextArea);
         this.ulPost = document.getElementById(idUlPost);
         this.postImage = document.getElementById(idPostImage);
         this.postVideo = document.getElementById(idPostVideo);
+        this.postAudio = document.getElementById(idPostAudio);
 
         this.posts = [];
         this.addSubmit();
@@ -65,7 +66,7 @@ class makePost {
                 const time = this.getTime();
                 const newPost = document.createElement('li');
                 newPost.classList.add('postUser');
-                newPost.innerHTML = `
+                newPost.innerHTML += `
                     <div class="info-user-post">
                         <div class="user">
                             <img src="../assets/user.png" alt="Icone User">
@@ -86,6 +87,9 @@ class makePost {
                 if (this.postVideo.mostrar)
                     newPost.innerHTML += `<video src="${this.postVideo.src}"controls style="width:300px; margin-bottom: 300px; border-radius: 10px;"></video>`;
 
+                if (this.postAudio.mostrar)
+                    newPost.innerHTML += `<audio src="${this.postAudio.src}" controls style="width:30%; margin-bottom: 20px;"></audio>`;
+
 
                 this.ulPost.append(newPost);
 
@@ -97,6 +101,9 @@ class makePost {
 
                 this.postVideo.src = null;
                 this.postVideo.mostrar = false;
+
+                this.postAudio.src = null;
+                this.postAudio.mostrar = false;
 
 
                 this.posts = [...this.posts, '<li class="postUser">' + newPost.innerHTML + '</li>'];
@@ -117,7 +124,7 @@ class makePost {
 
 }
 
-const makeForm = new makePost('formPost', 'textarea', 'posts', 'previewImagem', 'videoCarregado');
+const makeForm = new makePost('formPost', 'textarea', 'posts', 'previewImagem', 'videoCarregado', 'uploadAudio');
 
 let photo = document.getElementById('imgIcon');
 let file = document.getElementById('inputImagem');
@@ -130,7 +137,6 @@ photo.addEventListener('click', () => {
 const inputImagem = document.querySelector("#inputImagem");
 inputImagem.mostrar = false;
 
-let postMultimidea = document.querySelector("#postMultimidea"); 
 let previewImagem = document.querySelector("#previewImagem");
 
 inputImagem.addEventListener("change", function () {
@@ -138,28 +144,28 @@ inputImagem.addEventListener("change", function () {
 
     previewImagem.style.display = 'block';
 
-    reader.addEventListener("load", () => {        
+    reader.addEventListener("load", () => {
         let imagemCarregada = reader.result;
         previewImagem.mostrar = true;
-        previewImagem.src = imagemCarregada;        
+        previewImagem.src = imagemCarregada;
     });
-    reader.readAsDataURL(this.files[0]);  
-      
+    reader.readAsDataURL(this.files[0]);
+
 });
 
 
 let video = document.getElementById('video');
 let inputVideo = document.getElementById('inputVideo');
 
- video.addEventListener('click', () => {
-     inputVideo.click();
+video.addEventListener('click', () => {
+    inputVideo.click();
 });
 
 inputVideo.mostrar = false;
 
 let videoCarregado = document.querySelector("#videoCarregado");
 
-inputVideo.addEventListener("change", function() {
+inputVideo.addEventListener("change", function () {
     const reader = new FileReader();
     reader.addEventListener("load", () => {
         const uploadedVideo = reader.result;
@@ -170,9 +176,26 @@ inputVideo.addEventListener("change", function() {
 });
 
 
-
-// const flAudio = document.querySelector("#flAudio");
-
-
+let audio = document.getElementById('audio');
+let inputAudio = document.getElementById('inputAudio');
 
 
+audio.addEventListener('click', () => {
+    inputAudio.click();
+});
+
+const inputAudio2 = document.querySelector("#inputAudio");
+inputAudio2.mostrar = false;
+
+let uploadAudio = document.querySelector("#uploadAudio");
+
+inputAudio2.addEventListener("change", function () {
+    const reader = new FileReader();
+    reader.addEventListener("load", () => {
+        const uploadedAudio = reader.result;
+        uploadAudio.mostrar = true;
+        uploadAudio.src = uploadedAudio;
+        alert('O audio foi carregado, ao escrever e fazer seu post, ele será exibido!');
+    });
+    reader.readAsDataURL(this.files[0]);
+});
